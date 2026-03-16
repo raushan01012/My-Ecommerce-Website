@@ -89,6 +89,7 @@ body {
 
   .hero-right {
     max-width: 300px;
+    width: 100%;
   }
 
   .hero-right-text {
@@ -97,8 +98,10 @@ body {
   }
 
   .hero-card {
+    width: 290px;
     max-width: 290px;
     padding: 20px;
+    margin-left: auto;
   }
 
   .top1 h1 {
@@ -136,7 +139,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;   /* ye important hai */
+    flex-wrap: nowrap;
     gap: 10px;
   }
 
@@ -153,7 +156,7 @@ body {
     white-space: nowrap;
     text-align: center;
     flex: 1;
-    order: 0;           /* niche jane se rokega */
+    order: 0;
   }
 
   .header-box button {
@@ -163,7 +166,6 @@ body {
     white-space: nowrap;
     flex-shrink: 0;
   }
-}
 
   .blank {
     height: 24px;
@@ -206,7 +208,7 @@ body {
   }
 
   .hero-right {
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .hero-right-text {
@@ -216,7 +218,9 @@ body {
   }
 
   .hero-card {
+    width: 100%;
     max-width: 100%;
+    margin-left: 0;
     transform: rotate(0deg);
   }
 
@@ -239,7 +243,6 @@ body {
     margin-bottom: 18px;
   }
 
-  /* MAIN PRODUCT SLIDER FIX */
   .box {
     display: flex;
     flex-wrap: nowrap;
@@ -293,7 +296,6 @@ body {
     font-size: 0.95rem;
   }
 
-  /* swipe hint */
   .top1 {
     display: flex;
     flex-direction: column;
@@ -311,7 +313,7 @@ body {
 
 /* ---------- SMALL MOBILE ---------- */
 @media (max-width: 480px) {
- .header-box {
+  .header-box {
     width: 94%;
     gap: 8px;
   }
@@ -328,7 +330,6 @@ body {
     padding: 8px 13px;
     font-size: 0.75rem;
   }
-}
 
   .hero {
     width: 94%;

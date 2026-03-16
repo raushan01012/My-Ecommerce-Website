@@ -250,11 +250,12 @@
     .hero-label {
         font-size: 0.78rem;
         letter-spacing: 0.14em;
-        margin-bottom: 12px;
+        margin-bottom: 7px;
     }
 
     .hero-left h1 {
         font-size: 2.9rem;
+        padding-top: 15px;
         line-height: 0.96;
         letter-spacing: -0.05em;
     }

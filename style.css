@@ -100,6 +100,8 @@ body::before{
 
 .header-box button {
   padding: 10px 20px;
+
+
   font-size: .8vw;
   font-weight: 300;
   color: white;
@@ -481,4 +483,106 @@ body::before{
 .check:hover{
   transform: translateY(-2px);
   box-shadow: 0 14px 26px rgba(0,113,227,0.28);
+}
+
+
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  width: 100%;
+  margin-top: 80px;
+  padding: 30px 0 24px;
+  position: relative;
+}
+
+.footer-container {
+  width: 80%;
+  margin: auto;
+  padding: 34px 34px 20px;
+  border-radius: 32px 32px 0 0;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.footer-brand {
+  max-width: 420px;
+}
+
+.footer-brand h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #111111;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+.footer-links,
+.footer-contact {
+  min-width: 180px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 14px;
+}
+
+.footer-links a,
+.footer-contact a {
+  display: block;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #0a84ff;
+  transform: translateX(2px);
+}
+
+.footer-contact p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  padding-top: 18px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.88rem;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
 }

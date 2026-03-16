@@ -123,8 +123,9 @@ body.dark-mode::before {
 .header {
     height: 78px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     background: var(--header-bg);
     backdrop-filter: blur(16px);
@@ -996,14 +997,12 @@ body,
     position: absolute;
     inset: 0;
     transform: translateX(-100%);
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.18) 30%,
-        rgba(255, 255, 255, 0.65) 50%,
-        rgba(255, 255, 255, 0.18) 70%,
-        transparent 100%
-    );
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.18) 30%,
+            rgba(255, 255, 255, 0.65) 50%,
+            rgba(255, 255, 255, 0.18) 70%,
+            transparent 100%);
     animation: skeletonShimmer 1.4s linear infinite;
 }
 
@@ -1016,14 +1015,12 @@ body.dark-mode .shimmer-block {
 }
 
 body.dark-mode .shimmer-block::before {
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.04) 30%,
-        rgba(255, 255, 255, 0.18) 50%,
-        rgba(255, 255, 255, 0.04) 70%,
-        transparent 100%
-    );
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.04) 30%,
+            rgba(255, 255, 255, 0.18) 50%,
+            rgba(255, 255, 255, 0.04) 70%,
+            transparent 100%);
 }
 
 body.loading {
@@ -1099,12 +1096,10 @@ body.loading {
     left: -120%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.18),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.18),
+            transparent);
     transform: skewX(-20deg);
     transition: left 0.7s ease;
     pointer-events: none;
@@ -1115,22 +1110,31 @@ body.loading {
 }
 
 body.dark-mode .box1::after {
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.08),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent);
 }
 
 .box1:hover .img-area img {
     transform: scale(1.05) rotate(-1deg);
 }
 
-.top.reveal:nth-of-type(1) { transition-delay: 0.05s; }
-.top.reveal:nth-of-type(2) { transition-delay: 0.12s; }
-.top.reveal:nth-of-type(3) { transition-delay: 0.18s; }
-.top.reveal:nth-of-type(4) { transition-delay: 0.24s; }
+.top.reveal:nth-of-type(1) {
+    transition-delay: 0.05s;
+}
+
+.top.reveal:nth-of-type(2) {
+    transition-delay: 0.12s;
+}
+
+.top.reveal:nth-of-type(3) {
+    transition-delay: 0.18s;
+}
+
+.top.reveal:nth-of-type(4) {
+    transition-delay: 0.24s;
+}
 
 
 
@@ -1237,6 +1241,7 @@ body.dark-mode .trust-track span {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }

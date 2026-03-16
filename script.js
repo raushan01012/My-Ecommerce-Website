@@ -1,5 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.querySelector(".theme-icon");
+  const header = document.querySelector(".header");
+  const glow = document.querySelector(".cursor-glow");
+  const backToTop = document.querySelector(".back-to-top");
   const reveals = document.querySelectorAll(".reveal");
+  const cards = document.querySelectorAll(".box1");
+
+  const savedTheme = localStorage.getItem("site-theme");
+
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    if (themeIcon) themeIcon.textContent = "☀️";
+  } else {
+    if (themeIcon) themeIcon.textContent = "🌙";
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("site-theme", "dark");
+        if (themeIcon) themeIcon.textContent = "☀️";
+      } else {
+        localStorage.setItem("site-theme", "light");
+        if (themeIcon) themeIcon.textContent = "🌙";
+      }
+    });
+  }
 
   if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver(
@@ -24,8 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach((item) => item.classList.add("active"));
   }
 
-  const cards = document.querySelectorAll(".box1");
-
   cards.forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       if (window.innerWidth <= 768) return;
@@ -48,14 +76,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const backToTop = document.querySelector(".back-to-top");
-
   if (backToTop) {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 200) {
         backToTop.classList.add("show");
       } else {
         backToTop.classList.remove("show");
+      }
+
+      if (header) {
+        if (window.scrollY > 60) {
+          header.style.backdropFilter = "blur(22px)";
+          header.style.webkitBackdropFilter = "blur(22px)";
+          header.style.background = body.classList.contains("dark-mode")
+            ? "rgba(17,20,27,0.88)"
+            : "rgba(248,248,251,0.85)";
+        } else {
+          header.style.backdropFilter = "blur(16px)";
+          header.style.webkitBackdropFilter = "blur(16px)";
+          header.style.background = body.classList.contains("dark-mode")
+            ? "rgba(17,20,27,0.72)"
+            : "rgba(248,248,251,0.72)";
+        }
       }
     });
 
@@ -66,45 +108,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-});
 
+  const contactBtn = document.querySelector(".contact-btn");
 
+  if (contactBtn) {
+    contactBtn.addEventListener("mousemove", (e) => {
+      if (window.innerWidth <= 768) return;
 
+      const rect = contactBtn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
 
+      contactBtn.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+    });
 
-const btn = document.querySelector(".contact-btn");
+    contactBtn.addEventListener("mouseleave", () => {
+      contactBtn.style.transform = "translate(0px, 0px)";
+    });
+  }
 
-if (btn) {
-  btn.addEventListener("mousemove", (e) => {
-    const rect = btn.getBoundingClientRect();
-
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-  });
-
-  btn.addEventListener("mouseleave", () => {
-    btn.style.transform = "translate(0px,0px)";
-  });
-}
-
-const glow = document.querySelector(".cursor-glow");
-
-window.addEventListener("mousemove", (e) => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-});
-
-
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 60) {
-    header.style.backdropFilter = "blur(22px)";
-    header.style.background = "rgba(248,248,251,0.85)";
-  } else {
-    header.style.backdropFilter = "blur(16px)";
-    header.style.background = "rgba(248,248,251,0.72)";
+  if (glow) {
+    window.addEventListener("mousemove", (e) => {
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
+    });
   }
 });

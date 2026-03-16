@@ -1,21 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
+  const pageLoader = document.getElementById("pageLoader");
   const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = document.querySelector(".theme-icon");
   const header = document.querySelector(".header");
   const glow = document.querySelector(".cursor-glow");
   const backToTop = document.querySelector(".back-to-top");
   const reveals = document.querySelectorAll(".reveal");
   const cards = document.querySelectorAll(".box1");
+  const contactBtn = document.querySelector(".contact-btn");
+  const blobs = document.querySelectorAll(".blob");
+
+  body.classList.add("loading");
+
+  function updateHeaderStyle() {
+    if (!header) return;
+
+    if (window.scrollY > 10) {
+      header.style.backdropFilter = "blur(22px)";
+      header.style.webkitBackdropFilter = "blur(22px)";
+      header.style.background = body.classList.contains("dark-mode")
+        ? "rgba(17,20,27,0.88)"
+        : "rgba(248,248,251,0.85)";
+    } else {
+      header.style.backdropFilter = "blur(16px)";
+      header.style.webkitBackdropFilter = "blur(16px)";
+      header.style.background = body.classList.contains("dark-mode")
+        ? "rgba(17,20,27,0.72)"
+        : "rgba(248,248,251,0.72)";
+    }
+  }
+
+  function hideLoader() {
+    if (pageLoader) {
+      pageLoader.classList.add("hide");
+    }
+    body.classList.remove("loading");
+  }
 
   const savedTheme = localStorage.getItem("site-theme");
-
   if (savedTheme === "dark") {
     body.classList.add("dark-mode");
-    if (themeIcon) themeIcon.textContent = "☀️";
-  } else {
-    if (themeIcon) themeIcon.textContent = "🌙";
   }
+
+  updateHeaderStyle();
 
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
@@ -23,11 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (body.classList.contains("dark-mode")) {
         localStorage.setItem("site-theme", "dark");
-        if (themeIcon) themeIcon.textContent = "☀️";
       } else {
         localStorage.setItem("site-theme", "light");
-        if (themeIcon) themeIcon.textContent = "🌙";
       }
+
+      updateHeaderStyle();
     });
   }
 
@@ -76,31 +103,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  if (backToTop) {
-    window.addEventListener("scroll", () => {
+  window.addEventListener("scroll", () => {
+    if (backToTop) {
       if (window.scrollY > 200) {
         backToTop.classList.add("show");
       } else {
         backToTop.classList.remove("show");
       }
+    }
 
-      if (header) {
-        if (window.scrollY > 60) {
-          header.style.backdropFilter = "blur(22px)";
-          header.style.webkitBackdropFilter = "blur(22px)";
-          header.style.background = body.classList.contains("dark-mode")
-            ? "rgba(17,20,27,0.88)"
-            : "rgba(248,248,251,0.85)";
-        } else {
-          header.style.backdropFilter = "blur(16px)";
-          header.style.webkitBackdropFilter = "blur(16px)";
-          header.style.background = body.classList.contains("dark-mode")
-            ? "rgba(17,20,27,0.72)"
-            : "rgba(248,248,251,0.72)";
-        }
-      }
-    });
+    updateHeaderStyle();
+  });
 
+  if (backToTop) {
     backToTop.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
@@ -108,8 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-  const contactBtn = document.querySelector(".contact-btn");
 
   if (contactBtn) {
     contactBtn.addEventListener("mousemove", (e) => {
@@ -127,10 +140,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (glow) {
-    window.addEventListener("mousemove", (e) => {
+  window.addEventListener("mousemove", (e) => {
+    if (glow) {
       glow.style.left = e.clientX + "px";
       glow.style.top = e.clientY + "px";
+    }
+
+    if (blobs.length && window.innerWidth > 768) {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+      blobs.forEach((blob, index) => {
+        const factor = (index + 1) * 0.6;
+        blob.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+      });
+    }
+  });
+
+  if (document.readyState === "complete") {
+    setTimeout(hideLoader, 500);
+  } else {
+    window.addEventListener("load", () => {
+      setTimeout(hideLoader, 500);
     });
   }
 });

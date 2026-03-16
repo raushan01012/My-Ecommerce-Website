@@ -2,14 +2,6 @@
    RESPONSIVE
    ========================= */
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-body {
-    overflow-x: hidden;
-}
 
 /* ---------- DESKTOP / SMALL LAPTOP ---------- */
 @media (max-width: 1200px) {
@@ -143,6 +135,9 @@ body {
 
 /* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
+    .hero-right-text{
+        display: none;
+    }
     .header {
         height: auto;
         padding: 12px 0;

@@ -347,29 +347,22 @@
     .box::-webkit-scrollbar {
         display: none;
     }
+.box1 {
+    flex: 0 0 82%;
+    width: 82%;
+    min-width: 82%;
+    max-width: 82%;
+    min-height: 360px;
+    height: auto;
+    scroll-snap-align: start;
+    border-radius: 24px;
+    padding: 16px;
+}
 
-    .box1 {
-        flex: 0 0 86%;
-        /* width: 86%; */
-        /* min-width: 86%; */
-        /* max-width: 86%; */
-        min-height: 360px;
-        height: auto;
-        scroll-snap-align: start;
-        border-radius: 24px;
-        padding: 16px;
-
-
-        flex: 0 0 82%;
-        width: 82%;
-        min-width: 82%;
-        max-width: 82%;
-
-    .img-area {
-        height: 200px;
-    }
-    }
-
+.img-area {
+    height: 200px;
+}
+    
     .img-area {
         height: 210px;
         border-radius: 18px;

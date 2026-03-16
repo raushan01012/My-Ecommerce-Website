@@ -308,7 +308,6 @@ body::before {
     color: #1d1d1f;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
-
 }
 
 .top1 h1 span {
@@ -316,14 +315,14 @@ body::before {
 }
 
 .box {
-
+    width: 100%;
     display: flex;
     gap: 24px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    padding: 14px 4px 30px 2px;
+    padding: 14px 0 30px;
     mask-image: linear-gradient(to right, transparent 0, black 30px, black calc(100% - 30px), transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0, black 30px, black calc(100% - 30px), transparent 100%);
 }
@@ -719,12 +718,10 @@ body::before {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-@media (max-width: 768px) {
-    .blob1,
-    .blob2 {
-        width: 180px;
-        height: 180px;
-        filter: blur(70px);
-        opacity: 0.22;
-    }
+.box1 {
+    opacity: 0.96;
+}
+
+.box1:hover {
+    opacity: 1;
 }

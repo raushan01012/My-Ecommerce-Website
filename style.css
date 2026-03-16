@@ -257,7 +257,7 @@ body.dark-mode::before {
 }
 
 .blank {
-    height: 50px;
+    height: 88px;
     width: 100%;
     background: transparent;
 }
@@ -470,11 +470,11 @@ body.dark-mode::before {
     gap: 24px;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-behavior: smooth;
     scrollbar-width: none;
     padding: 14px 0 30px;
-    mask-image: linear-gradient(to right, transparent 0, black 30px, black calc(100% - 30px), transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 30px, black calc(100% - 30px), transparent 100%);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
 }
 
 .box::-webkit-scrollbar {
@@ -489,17 +489,16 @@ body.dark-mode::before {
     border: 1px solid var(--glass-border);
     border-radius: 32px;
     box-shadow: var(--glass-shadow);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.35s ease, opacity 0.25s ease;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.2s ease, opacity 0.16s ease;
     cursor: pointer;
     overflow: hidden;
     padding: 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    scroll-snap-stop: always;
-    transform-style: preserve-3d;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    scroll-snap-align: start;
     opacity: 0.96;
 }
 
@@ -721,8 +720,8 @@ body.dark-mode::before {
 
 .reveal {
     opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(20px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
     will-change: opacity, transform;
 }
 
@@ -800,16 +799,15 @@ body.dark-mode .back-to-top {
 
 .cursor-glow {
     position: fixed;
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 70%);
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     mix-blend-mode: overlay;
     z-index: 0;
     transform: translate(-50%, -50%);
 }
-
 body.dark-mode .cursor-glow {
     background: radial-gradient(circle, rgba(99, 148, 255, 0.14), transparent 70%);
     mix-blend-mode: screen;

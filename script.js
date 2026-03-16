@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
   const cards = document.querySelectorAll(".box1");
   const contactBtn = document.querySelector(".contact-btn");
-  const blobs = document.querySelectorAll(".blob");
+  const boxes = document.querySelectorAll(".box");
 
   body.classList.add("loading");
 
@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!header) return;
 
     if (window.scrollY > 10) {
-      header.style.backdropFilter = "blur(22px)";
-      header.style.webkitBackdropFilter = "blur(22px)";
+      header.style.backdropFilter = "blur(14px)";
+      header.style.webkitBackdropFilter = "blur(14px)";
       header.style.background = body.classList.contains("dark-mode")
         ? "rgba(17,20,27,0.88)"
-        : "rgba(248,248,251,0.85)";
+        : "rgba(248,248,251,0.88)";
     } else {
-      header.style.backdropFilter = "blur(16px)";
-      header.style.webkitBackdropFilter = "blur(16px)";
+      header.style.backdropFilter = "blur(10px)";
+      header.style.webkitBackdropFilter = "blur(10px)";
       header.style.background = body.classList.contains("dark-mode")
         ? "rgba(17,20,27,0.72)"
         : "rgba(248,248,251,0.72)";
@@ -69,33 +69,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -60px 0px"
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
       }
     );
 
-    reveals.forEach((item) => {
-      revealObserver.observe(item);
-    });
+    reveals.forEach((item) => revealObserver.observe(item));
   } else {
     reveals.forEach((item) => item.classList.add("active"));
   }
 
+  // Card tilt: lighter + optimized
   cards.forEach((card) => {
+    let rafId = null;
+
     card.addEventListener("mousemove", (e) => {
-      if (window.innerWidth <= 768) return;
+      if (window.innerWidth <= 900) return;
+      if (rafId) return;
 
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -4;
-      const rotateY = ((x - centerX) / centerX) * 4;
+        const rotateX = ((y - centerY) / centerY) * -2.2;
+        const rotateY = ((x - centerX) / centerX) * 2.2;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        rafId = null;
+      });
     });
 
     card.addEventListener("mouseleave", () => {
@@ -103,17 +108,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  window.addEventListener("scroll", () => {
-    if (backToTop) {
-      if (window.scrollY > 200) {
-        backToTop.classList.add("show");
-      } else {
-        backToTop.classList.remove("show");
-      }
-    }
-
-    updateHeaderStyle();
+  // Important: horizontal sections should not "eat" vertical wheel
+  boxes.forEach((box) => {
+    box.addEventListener(
+      "wheel",
+      (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          return;
+        }
+      },
+      { passive: true }
+    );
   });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (backToTop) {
+        if (window.scrollY > 200) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      }
+
+      updateHeaderStyle();
+    },
+    { passive: true }
+  );
 
   if (backToTop) {
     backToTop.addEventListener("click", () => {
@@ -125,14 +147,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (contactBtn) {
+    let btnRaf = null;
+
     contactBtn.addEventListener("mousemove", (e) => {
-      if (window.innerWidth <= 768) return;
+      if (window.innerWidth <= 900) return;
+      if (btnRaf) return;
 
-      const rect = contactBtn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+      btnRaf = requestAnimationFrame(() => {
+        const rect = contactBtn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-      contactBtn.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+        contactBtn.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
+        btnRaf = null;
+      });
     });
 
     contactBtn.addEventListener("mouseleave", () => {
@@ -140,28 +168,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.addEventListener("mousemove", (e) => {
-    if (glow) {
-      glow.style.left = e.clientX + "px";
-      glow.style.top = e.clientY + "px";
-    }
+  // Cursor glow: lighter and desktop only
+  let glowRaf = null;
+  window.addEventListener(
+    "mousemove",
+    (e) => {
+      if (!glow || window.innerWidth <= 900) return;
+      if (glowRaf) return;
 
-    if (blobs.length && window.innerWidth > 768) {
-      const x = (e.clientX / window.innerWidth - 0.5) * 20;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-      blobs.forEach((blob, index) => {
-        const factor = (index + 1) * 0.6;
-        blob.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
+      glowRaf = requestAnimationFrame(() => {
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+        glowRaf = null;
       });
-    }
-  });
+    },
+    { passive: true }
+  );
 
   if (document.readyState === "complete") {
-    setTimeout(hideLoader, 500);
+    setTimeout(hideLoader, 180);
   } else {
     window.addEventListener("load", () => {
-      setTimeout(hideLoader, 500);
+      setTimeout(hideLoader, 180);
     });
   }
 });

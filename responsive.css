@@ -2,7 +2,6 @@
    RESPONSIVE
    ========================= */
 
-/* ---------- DESKTOP / SMALL LAPTOP ---------- */
 @media (max-width: 1200px) {
     .header-box,
     .hero,
@@ -31,7 +30,6 @@
     }
 }
 
-/* ---------- TABLET ---------- */
 @media (max-width: 1024px) {
     .header-box,
     .hero,
@@ -87,44 +85,8 @@
         font-size: 3.95rem;
     }
 
-    .hero-subtext {
-        font-size: 1rem;
-        line-height: 1.65;
-    }
-
-    .hero-badges span {
-        font-size: 0.86rem;
-        padding: 9px 14px;
-    }
-
-    .hero-card {
-        max-width: 100%;
-        padding: 18px;
-    }
-
-    .hero-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .hero-card-stats strong {
-        font-size: 1.05rem;
-    }
-
-    .hero-card-stats span {
-        font-size: 0.84rem;
-    }
-
-    .top {
-        margin: 40px auto 78px;
-    }
-
     .top1 h1 {
         font-size: 1.72rem;
-    }
-
-    .box {
-        gap: 18px;
-        padding: 14px 0 22px;
     }
 
     .box1 {
@@ -141,7 +103,6 @@
     }
 }
 
-/* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
     .header {
         height: auto;
@@ -177,14 +138,22 @@
         gap: 10px;
     }
 
+    /* MOBILE PE INSTAGRAM HIDE */
+    .header-actions .insta-link,
+    .insta-link,
+    .insta-btn {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+
     .theme-toggle {
         width: 40px;
         height: 40px;
         font-size: 0.9rem;
-    }
-
-    .insta-btn {
-        display: none;
     }
 
     .mode-switch-wrap {
@@ -218,8 +187,6 @@
 
     .blank {
         height: 92px;
-        width: 100%;
-        background: transparent;
     }
 
     .trust-marquee {
@@ -249,22 +216,6 @@
         padding: 22px 0 26px;
         margin: 0 auto 32px;
         min-height: auto;
-    }
-
-    .hero::before {
-        left: -70px;
-        top: -12px;
-        width: 190px;
-        height: 190px;
-        filter: blur(16px);
-    }
-
-    .hero::after {
-        right: -10px;
-        top: 34px;
-        width: 150px;
-        height: 150px;
-        filter: blur(16px);
     }
 
     .hero-left,
@@ -310,37 +261,10 @@
         max-width: 100%;
         padding: 18px;
         border-radius: 22px;
-        box-shadow:
-            0 10px 20px rgba(0, 0, 0, 0.04),
-            inset 0 1px 0 rgba(255, 255, 255, 0.85);
     }
 
     .hero-card:hover {
         transform: none;
-    }
-
-    .hero-card-label {
-        font-size: 0.74rem;
-        margin-bottom: 10px;
-    }
-
-    .hero-card h3 {
-        font-size: 1.15rem;
-        margin-bottom: 16px;
-    }
-
-    .hero-card-stats {
-        gap: 12px;
-        justify-content: space-between;
-    }
-
-    .hero-card-stats strong {
-        font-size: 1.02rem;
-    }
-
-    .hero-card-stats span {
-        font-size: 0.84rem;
-        line-height: 1.4;
     }
 
     .top {
@@ -461,16 +385,6 @@
         font-size: 0.9rem;
     }
 
-    .footer-links h3,
-    .footer-contact h3 {
-        margin-bottom: 10px;
-    }
-
-    .footer-links a,
-    .footer-contact a {
-        margin-bottom: 8px;
-    }
-
     .footer-bottom {
         padding-top: 14px;
     }
@@ -480,7 +394,6 @@
     }
 }
 
-/* ---------- SMALL MOBILE ---------- */
 @media (max-width: 480px) {
     .header-box,
     .hero,
@@ -554,10 +467,6 @@
         border-radius: 18px;
     }
 
-    .product-info {
-        margin-top: 8px;
-    }
-
     .product-info h3 {
         font-size: 0.95rem;
     }
@@ -582,10 +491,6 @@
         border-radius: 20px 20px 0 0;
     }
 
-    .footer-top {
-        gap: 20px;
-    }
-
     .footer-brand h2 {
         font-size: 1.12rem;
     }
@@ -598,38 +503,17 @@
         line-height: 1.7;
     }
 
-    .footer-links h3,
-    .footer-contact h3 {
-        font-size: 0.94rem;
-    }
-
     .footer-bottom p {
         font-size: 0.78rem;
     }
 }
 
-/* ---------- EXTRA SMALL ---------- */
 @media (max-width: 416px) {
     #budget {
         display: none;
     }
 }
 
-@media (max-width: 360px) {
-    .header-actions {
-        margin-left: 0;
-    }
-
-    .header-box {
-        justify-content: space-between;
-    }
-
-    .mode-tab {
-        padding: 8px 10px;
-    }
-}
-
-/* ---------- LARGE DESKTOP ---------- */
 @media (min-width: 1280px) {
     .box1 {
         flex: 0 0 360px;

@@ -453,7 +453,7 @@ body.dark-mode::before {
     scroll-snap-type: none;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: auto;
-    touch-action: pan-y;
+    touch-action: pan-x pan-y;
 }
 
 .box::-webkit-scrollbar {

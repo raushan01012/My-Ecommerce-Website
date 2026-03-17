@@ -12,14 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!header) return;
 
     if (window.scrollY > 10) {
-      header.style.backdropFilter = "blur(12px)";
-      header.style.webkitBackdropFilter = "blur(12px)";
+      header.style.backdropFilter = "blur(10px)";
+      header.style.webkitBackdropFilter = "blur(10px)";
       header.style.background = body.classList.contains("dark-mode")
         ? "rgba(17,20,27,0.88)"
         : "rgba(248,248,251,0.88)";
     } else {
-      header.style.backdropFilter = "blur(10px)";
-      header.style.webkitBackdropFilter = "blur(10px)";
+      header.style.backdropFilter = "blur(8px)";
+      header.style.webkitBackdropFilter = "blur(8px)";
       header.style.background = body.classList.contains("dark-mode")
         ? "rgba(17,20,27,0.78)"
         : "rgba(248,248,251,0.78)";
@@ -98,10 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (document.readyState === "complete") {
-    setTimeout(hideLoader, 120);
+    setTimeout(hideLoader, 100);
   } else {
     window.addEventListener("load", () => {
-      setTimeout(hideLoader, 120);
+      setTimeout(hideLoader, 100);
     });
   }
 });

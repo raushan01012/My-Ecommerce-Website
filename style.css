@@ -447,17 +447,22 @@ body.dark-mode::before {
     display: flex;
     gap: 24px;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     scrollbar-width: none;
-    padding: 14px 0 26px;
+    padding: 14px 0 24px;
+    scroll-snap-type: none;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
+    overscroll-behavior: auto;
+    touch-action: pan-y;
 }
 
 .box::-webkit-scrollbar {
     display: none;
 }
 
+.box::-webkit-scrollbar {
+    display: none;
+}
 .box1 {
     position: relative;
     flex: 0 0 350px;
@@ -466,17 +471,16 @@ body.dark-mode::before {
     border: 1px solid var(--glass-border);
     border-radius: 32px;
     box-shadow: var(--glass-shadow);
-    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.2s ease, opacity 0.16s ease;
+    transition: box-shadow 0.18s ease, border-color 0.18s ease;
     cursor: pointer;
     overflow: hidden;
     padding: 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    scroll-snap-align: start;
-    opacity: 0.98;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 1;
 }
 
 .box1::before {
@@ -488,35 +492,15 @@ body.dark-mode::before {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--glass-strong), transparent);
 }
-
-.box1::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 55%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.55s ease;
-    pointer-events: none;
-}
-
 body.dark-mode .box1::after {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
 }
 
-.box1:hover::after {
-    left: 140%;
-}
 
 .box1:hover {
-    transform: translateY(-4px);
     box-shadow: var(--card-hover-shadow);
     border-color: var(--glass-strong);
-    opacity: 1;
 }
-
 .img-area {
     width: 100%;
     height: 220px;

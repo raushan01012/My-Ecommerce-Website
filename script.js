@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const pageLoader = document.getElementById("pageLoader");
   const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.querySelector(".theme-icon");
   const header = document.querySelector(".header");
   const backToTop = document.querySelector(".back-to-top");
   const reveals = document.querySelectorAll(".reveal");
@@ -12,18 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!header) return;
 
     if (window.scrollY > 10) {
-      header.style.backdropFilter = "blur(10px)";
-      header.style.webkitBackdropFilter = "blur(10px)";
       header.style.background = body.classList.contains("dark-mode")
-        ? "rgba(17,20,27,0.88)"
-        : "rgba(248,248,251,0.88)";
+        ? "rgba(17,20,27,0.90)"
+        : "rgba(248,248,251,0.90)";
     } else {
-      header.style.backdropFilter = "blur(8px)";
-      header.style.webkitBackdropFilter = "blur(8px)";
       header.style.background = body.classList.contains("dark-mode")
-        ? "rgba(17,20,27,0.78)"
-        : "rgba(248,248,251,0.78)";
+        ? "rgba(17,20,27,0.86)"
+        : "rgba(248,248,251,0.82)";
     }
+  }
+
+  function updateThemeIcon() {
+    if (!themeIcon) return;
+    themeIcon.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
   }
 
   function hideLoader() {
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.add("dark-mode");
   }
 
+  updateThemeIcon();
   updateHeaderStyle();
 
   if (themeToggle) {
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "site-theme",
         body.classList.contains("dark-mode") ? "dark" : "light"
       );
+      updateThemeIcon();
       updateHeaderStyle();
     });
   }
@@ -63,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         threshold: 0.08,
-        rootMargin: "0px 0px -30px 0px"
+        rootMargin: "0px 0px -20px 0px",
       }
     );
 
@@ -92,16 +96,16 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTop.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     });
   }
 
   if (document.readyState === "complete") {
-    setTimeout(hideLoader, 100);
+    setTimeout(hideLoader, 80);
   } else {
     window.addEventListener("load", () => {
-      setTimeout(hideLoader, 100);
+      setTimeout(hideLoader, 80);
     });
   }
 });

@@ -9,31 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   body.classList.add("loading");
 
-  function updateHeaderStyle() {
+  const updateHeaderStyle = () => {
     if (!header) return;
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  };
 
-    if (window.scrollY > 10) {
-      header.style.background = body.classList.contains("dark-mode")
-        ? "rgba(17,20,27,0.90)"
-        : "rgba(248,248,251,0.90)";
-    } else {
-      header.style.background = body.classList.contains("dark-mode")
-        ? "rgba(17,20,27,0.86)"
-        : "rgba(248,248,251,0.82)";
-    }
-  }
-
-  function updateThemeIcon() {
+  const updateThemeIcon = () => {
     if (!themeIcon) return;
     themeIcon.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
-  }
+  };
 
-  function hideLoader() {
+  const hideLoader = () => {
     if (pageLoader) {
       pageLoader.classList.add("hide");
     }
     body.classList.remove("loading");
-  }
+  };
 
   const savedTheme = localStorage.getItem("site-theme");
   if (savedTheme === "dark") {
@@ -80,13 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scroll",
     () => {
       if (backToTop) {
-        if (window.scrollY > 220) {
-          backToTop.classList.add("show");
-        } else {
-          backToTop.classList.remove("show");
-        }
+        backToTop.classList.toggle("show", window.scrollY > 220);
       }
-
       updateHeaderStyle();
     },
     { passive: true }

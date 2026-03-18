@@ -104,6 +104,9 @@
 }
 
 @media (max-width: 768px) {
+    .hero-card {
+    transform: rotate(0deg);
+}
     .header {
         height: auto;
         min-height: 72px;

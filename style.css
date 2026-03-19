@@ -93,12 +93,16 @@ body.dark-mode {
 
 html,
 body {
+      scroll-behavior: smooth;
     width: 100%;
     min-height: 100%;
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
     background: var(--bg-main);
     color: var(--text-main);
+     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 html {
@@ -807,8 +811,9 @@ body.dark-mode .trust-track span {
 
 .reveal {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.28s ease, transform 0.28s ease;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    will-change: opacity, transform;
 }
 
 .reveal.active {
@@ -853,23 +858,22 @@ body.dark-mode .back-to-top {
 .page-loader {
     position: fixed;
     inset: 0;
-    z-index: 99999;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 32px;
-    background: var(--bg-main);
+    background: inherit;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.22s ease, visibility 0.22s ease;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    pointer-events: none;
 }
 
 .page-loader.hide {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
 }
-
 .loader-inner {
     width: min(1180px, 92vw);
     display: flex;
@@ -994,9 +998,6 @@ body.dark-mode .shimmer-block::before {
             transparent 100%);
 }
 
-body.loading {
-    overflow: hidden;
-}
 
 @keyframes skeletonShimmer {
     100% {
@@ -1467,5 +1468,13 @@ body.loading {
 @media (min-width: 1280px) {
     .box1 {
         flex: 0 0 360px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }

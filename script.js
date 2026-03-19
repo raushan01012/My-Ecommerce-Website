@@ -7,11 +7,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTop = document.querySelector(".back-to-top");
   const reveals = document.querySelectorAll(".reveal");
 
-  body.classList.add("loading");
+  let lastScrollY = window.scrollY;
+  let ticking = false;
 
   const updateHeaderStyle = () => {
     if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 10);
+    header.classList.toggle("scrolled", lastScrollY > 10);
+  };
+
+  const updateBackToTop = () => {
+    if (!backToTop) return;
+    backToTop.classList.toggle("show", lastScrollY > 220);
+  };
+
+  const onScroll = () => {
+    lastScrollY = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateHeaderStyle();
+        updateBackToTop();
+        ticking = false;
+      });
+      ticking = true;
+    }
   };
 
   const updateThemeIcon = () => {
@@ -23,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (pageLoader) {
       pageLoader.classList.add("hide");
     }
-    body.classList.remove("loading");
+    body.classList.add("page-ready");
   };
 
   const savedTheme = localStorage.getItem("site-theme");
@@ -33,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateThemeIcon();
   updateHeaderStyle();
+  updateBackToTop();
 
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
@@ -42,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.contains("dark-mode") ? "dark" : "light"
       );
       updateThemeIcon();
-      updateHeaderStyle();
     });
   }
 
@@ -57,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.08,
-        rootMargin: "0px 0px -20px 0px",
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
       }
     );
 
@@ -67,16 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach((item) => item.classList.add("active"));
   }
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (backToTop) {
-        backToTop.classList.toggle("show", window.scrollY > 220);
-      }
-      updateHeaderStyle();
-    },
-    { passive: true }
-  );
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   if (backToTop) {
     backToTop.addEventListener("click", () => {
@@ -87,11 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (document.readyState === "complete") {
-    setTimeout(hideLoader, 80);
-  } else {
-    window.addEventListener("load", () => {
-      setTimeout(hideLoader, 80);
-    });
-  }
+  // loader instantly hatao
+  requestAnimationFrame(hideLoader);
+
+  // fallback
+  window.addEventListener("load", hideLoader, { once: true });
 });

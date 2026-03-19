@@ -104,6 +104,27 @@
 }
 
 @media (max-width: 768px) {
+    .box1,
+    .hero-card,
+    .footer-container,
+    .mode-switch,
+    .hero-badges span,
+    .trust-track span {
+        box-shadow: none;
+    }
+
+    .box1,
+    .hero-card,
+    .footer-container {
+        border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .img-area::after,
+    .hero::before,
+    .hero::after,
+    .header::after {
+        display: none;
+    }
   
 
     .header {

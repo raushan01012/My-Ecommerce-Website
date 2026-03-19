@@ -93,22 +93,19 @@ body.dark-mode {
 
 html,
 body {
-      scroll-behavior: smooth;
     width: 100%;
     min-height: 100%;
     font-family: "Inter", sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip; /* hidden ki jagah clip — mobile scroll momentum nahi toota */
     background: var(--bg-main);
     color: var(--text-main);
-     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* sirf html pe enough hai */
 }
-
 body::before {
     content: "";
     position: fixed;

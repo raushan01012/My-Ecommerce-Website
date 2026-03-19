@@ -106,6 +106,9 @@
 }
 
 @media (max-width: 768px) {
+    body::before {
+  display: none;
+}
 
     .box1,
     .hero-card,

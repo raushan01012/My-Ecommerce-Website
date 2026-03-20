@@ -10,32 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastScrollY = window.scrollY;
   let ticking = false;
 
-  // ─── Theme ───────────────────────────────────────────────────────────────────
 
   const savedTheme = localStorage.getItem("site-theme");
-  if (savedTheme === "dark") {
-    body.classList.add("dark-mode");
-  }
+  if (savedTheme === "dark") body.classList.add("dark-mode");
 
   const updateThemeIcon = () => {
     if (!themeIcon) return;
     themeIcon.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
   };
-
   updateThemeIcon();
 
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
-      localStorage.setItem(
-        "site-theme",
-        body.classList.contains("dark-mode") ? "dark" : "light"
-      );
+      localStorage.setItem("site-theme", body.classList.contains("dark-mode") ? "dark" : "light");
       updateThemeIcon();
     });
   }
 
-  // ─── Scroll handlers ─────────────────────────────────────────────────────────
 
   const updateHeaderStyle = () => {
     if (!header) return;
@@ -61,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateHeaderStyle();
   updateBackToTop();
-
   window.addEventListener("scroll", onScroll, { passive: true });
 
   if (backToTop) {
@@ -70,60 +61,136 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ─── Reveal on scroll ────────────────────────────────────────────────────────
 
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    reveals.forEach((item) => revealObserver.observe(item));
-  } else {
-    reveals.forEach((item) => item.classList.add("active"));
+  const triggerReveals = () => {
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.10, rootMargin: "0px 0px -36px 0px" }
+      );
+      document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+    } else {
+      document.querySelectorAll(".reveal").forEach((item) => item.classList.add("active"));
+    }
+  };
+
+  triggerReveals();
+
+
+  const genderTabs = document.querySelectorAll(".gender-tab");
+  const genderSlider = document.getElementById("genderSlider");
+  const menContent = document.getElementById("menContent");
+  const womenContent = document.getElementById("womenContent");
+
+  if (genderTabs.length && genderSlider) {
+
+
+    const moveSlider = (tabEl) => {
+      const nav = tabEl.closest(".gender-nav");
+      const navRect = nav.getBoundingClientRect();
+      const tabRect = tabEl.getBoundingClientRect();
+      genderSlider.style.left = (tabRect.left - navRect.left + nav.scrollLeft) + "px";
+      genderSlider.style.width = tabRect.width + "px";
+    };
+
+
+    const activeTab = document.querySelector(".gender-tab.active");
+    if (activeTab) {
+
+      requestAnimationFrame(() => moveSlider(activeTab));
+    }
+
+    const showContent = (gender) => {
+      const isMan = gender === "men";
+      const showEl = isMan ? menContent : womenContent;
+      const hideEl = isMan ? womenContent : menContent;
+
+      if (!showEl || !hideEl) return;
+
+
+      hideEl.classList.remove("active-content", "fade-in");
+      hideEl.style.display = "none";
+
+
+      showEl.style.display = "block";
+
+      showEl.classList.remove("fade-in");
+      void showEl.offsetWidth; // reflow
+      showEl.classList.add("active-content", "fade-in");
+
+
+      triggerReveals();
+
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    genderTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        if (tab.classList.contains("active")) return;
+
+        genderTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+
+        const gender = tab.dataset.gender;
+        localStorage.setItem("site-gender", gender);
+
+
+        moveSlider(tab);
+
+
+        showContent(gender);
+      });
+    });
+
+
+    const savedGender = localStorage.getItem("site-gender");
+    if (savedGender && savedGender !== "men") {
+      const targetTab = document.querySelector(`.gender-tab[data-gender="${savedGender}"]`);
+      if (targetTab) {
+        // Simulate click without scroll
+        genderTabs.forEach((t) => t.classList.remove("active"));
+        targetTab.classList.add("active");
+        requestAnimationFrame(() => moveSlider(targetTab));
+        showContent(savedGender);
+      }
+    }
+
+
+    window.addEventListener("resize", () => {
+      const active = document.querySelector(".gender-tab.active");
+      if (active) moveSlider(active);
+    }, { passive: true });
   }
 
-  // ─── Page loader ─────────────────────────────────────────────────────────────
-  // FIX 1: body ko lock karo jab tak loader visible hai
-  //         Isse loader ke neeche body scroll nahi hogi
+
   body.style.overflow = "hidden";
-  body.style.touchAction = "none"; // mobile touch scroll bhi rok do
+  body.style.touchAction = "none";
 
   let loaderHidden = false;
 
   const hideLoader = () => {
-    if (loaderHidden) return; // ek baar se zyada na chale
+    if (loaderHidden) return;
     loaderHidden = true;
-
-    if (pageLoader) {
-      pageLoader.classList.add("hide");
-    }
-
-    // FIX 2: body unlock karo — scroll wapas enable karo
+    if (pageLoader) pageLoader.classList.add("hide");
     body.style.overflow = "";
     body.style.touchAction = "";
   };
 
-  // FIX 3: Double rAF — pehla frame schedule karta hai,
-  //         doosra ensure karta hai browser ne actual paint kar liya,
-  //         tab loader hide hoga. Single rAF pe paint se pehle
-  //         hide ho jaata tha jisse flicker aata tha.
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       hideLoader();
     });
   });
 
-  // Fallback: agar kuch resources slow hain toh load event pe bhi hide karo
   window.addEventListener("load", hideLoader, { once: true });
-
-  // Safety fallback: max 1.5s ke baad loader force hide karo
-  // Taaki kisi bhi case mein page stuck na rahe
   setTimeout(hideLoader, 1500);
 });

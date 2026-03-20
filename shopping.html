@@ -18,26 +18,22 @@
     <div class="page-loader" id="pageLoader">
         <div class="loader-inner">
             <div class="loader-brand shimmer-block"></div>
-
             <div class="loader-hero">
                 <div class="loader-left">
                     <div class="skeleton-line short shimmer-block"></div>
                     <div class="skeleton-line title shimmer-block"></div>
                     <div class="skeleton-line medium shimmer-block"></div>
                     <div class="skeleton-line medium shimmer-block"></div>
-
                     <div class="loader-badges">
                         <span class="skeleton-pill shimmer-block"></span>
                         <span class="skeleton-pill shimmer-block"></span>
                         <span class="skeleton-pill shimmer-block"></span>
                     </div>
                 </div>
-
                 <div class="loader-right">
                     <div class="skeleton-card shimmer-block"></div>
                 </div>
             </div>
-
             <div class="loader-products">
                 <div class="skeleton-product shimmer-block"></div>
                 <div class="skeleton-product shimmer-block"></div>
@@ -61,491 +57,808 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
                 </button>
-
                 <a href="https://www.instagram.com/raushanexplains/" target="_blank" rel="noopener noreferrer"
                     class="insta-link">
-                    <button class="contact-btn insta-btn">
-                        <span>Instagram</span>
-                    </button>
+                    <button class="contact-btn insta-btn"><span>Instagram</span></button>
                 </a>
+            </div>
+        </div>
+
+        <!-- Gender sub-nav — only on shopping page -->
+        <div class="gender-nav-wrap">
+            <div class="gender-nav" id="genderNav">
+                <button class="gender-tab active" data-gender="men">
+                    <span class="gender-icon">👔</span> Men
+                </button>
+                <button class="gender-tab" data-gender="women">
+                    <span class="gender-icon">👗</span> Women
+                </button>
+                <div class="gender-slider" id="genderSlider"></div>
             </div>
         </div>
     </header>
 
-    <div class="blank"></div>
+    <div class="blank shopping-blank"></div>
 
-    <section class="hero reveal">
-        <div class="hero-left">
-            <p class="hero-label">Curated by RaushanExplains</p>
-            <h1>Fashion Finds</h1>
-            <p class="hero-subtext">
-                Trendy picks, daily wear essentials, and stylish products that look good and feel practical.
-            </p>
+    <!-- =========== MEN SECTION =========== -->
+    <div id="menContent" class="gender-content active-content">
 
-            <div class="hero-badges">
-                <span>Stylish Picks</span>
-                <span id="budget">Budget Friendly</span>
-                <span>Amazon Deals</span>
+        <section class="hero reveal">
+            <div class="hero-left">
+                <p class="hero-label">Curated by RaushanExplains</p>
+                <h1>Men's Finds</h1>
+                <p class="hero-subtext">Sharp style, everyday essentials, and smart budget picks crafted for men.</p>
+                <div class="hero-badges">
+                    <span>Trending Styles</span>
+                    <span id="budget">Budget Friendly</span>
+                    <span>Amazon Deals</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <p class="hero-right-text">Discover stylish picks for men — from casual wear to accessories worth adding
+                    to your wardrobe.</p>
+                <div class="hero-card">
+                    <p class="hero-card-label">This Week</p>
+                    <h3>20+ men's picks</h3>
+                    <div class="hero-card-stats">
+                        <div><strong>4.0+</strong><span>Avg rating</span></div>
+                        <div><strong>₹399+</strong><span>Best deals</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-marquee">
+            <div class="trust-track">
+                <span>Men's Style</span><span>Trending Picks</span><span>Budget Friendly</span>
+                <span>Creator Recommended</span><span>Weekly Updates</span><span>Smart Finds</span>
+                <span>Men's Style</span><span>Trending Picks</span><span>Budget Friendly</span>
+                <span>Creator Recommended</span><span>Weekly Updates</span><span>Smart Finds</span>
             </div>
         </div>
 
-        <div class="hero-right">
-            <p class="hero-right-text">
-                Explore useful fashion finds with a clean shopping layout and easy recommendations.
-            </p>
-
-            <div class="hero-card">
-                <p class="hero-card-label">This Week</p>
-                <h3>20+ fashion picks</h3>
-                <div class="hero-card-stats">
-                    <div>
-                        <strong>4.0+</strong>
-                        <span>Avg rating</span>
-                    </div>
-                    <div>
-                        <strong>₹399+</strong>
-                        <span>Best deals</span>
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Jeans for Men under ₹2000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-jeans1.jpg" alt="Slim Fit Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Slim Fit Dark Blue Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1299</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
                     </div>
                 </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-jeans2.jpg" alt="Straight Fit Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Straight Fit Washed Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1499</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-jeans3.jpg" alt="Relaxed Fit Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Relaxed Fit Light Blue Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1199</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-jeans4.jpg" alt="Skinny Fit Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Skinny Fit Black Stretch Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹999</p>
+                            <p>⭐ 3.9 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-jeans5.jpg" alt="Cargo Denim Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Cargo Denim Utility Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1799</p>
+                            <p>⭐ 4.3 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best T-Shirts for Men under ₹1000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-tshirt1.jpg" alt="Oversized T-Shirt" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Oversized Drop Shoulder T-Shirt</h3>
+                        <div class="para">
+                            <p class="price">₹699</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-tshirt2.jpg" alt="Graphic Print T-Shirt" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Graphic Print Streetwear Tee</h3>
+                        <div class="para">
+                            <p class="price">₹799</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-tshirt3.jpg" alt="Solid Black T-Shirt" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Solid Black Regular Fit T-Shirt</h3>
+                        <div class="para">
+                            <p class="price">₹599</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-tshirt4.jpg" alt="Polo Neck T-Shirt" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Classic Polo Neck T-Shirt</h3>
+                        <div class="para">
+                            <p class="price">₹749</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-tshirt5.jpg" alt="Printed Round Neck Tee" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Printed Round Neck Cotton Tee</h3>
+                        <div class="para">
+                            <p class="price">₹649</p>
+                            <p>⭐ 3.9 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Sneakers for Men under ₹2000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-sneaker1.jpg" alt="White Sneakers" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Classic White Low-Top Sneakers</h3>
+                        <div class="para">
+                            <p class="price">₹1499</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-sneaker2.jpg" alt="Black Sneakers" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Minimal All Black Sneakers</h3>
+                        <div class="para">
+                            <p class="price">₹1799</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-sneaker3.jpg" alt="Running Sneakers" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Lightweight Running Sneakers</h3>
+                        <div class="para">
+                            <p class="price">₹1299</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-sneaker4.jpg" alt="High Top Sneakers" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Streetwear High Top Canvas</h3>
+                        <div class="para">
+                            <p class="price">₹1599</p>
+                            <p>⭐ 3.9 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-sneaker5.jpg" alt="Chunky Sneakers" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Chunky Sole Platform Sneakers</h3>
+                        <div class="para">
+                            <p class="price">₹1899</p>
+                            <p>⭐ 4.3 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Watches for Men under ₹1500</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-watch1.jpg" alt="Classic Black Watch" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Classic Matte Black Watch</h3>
+                        <div class="para">
+                            <p class="price">₹999</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-watch2.jpg" alt="Minimal Dial Watch" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Minimalist Dial Sports Watch</h3>
+                        <div class="para">
+                            <p class="price">₹1199</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-watch3.jpg" alt="Steel Chain Watch" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Steel Chain Formal Watch</h3>
+                        <div class="para">
+                            <p class="price">₹1299</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-watch4.jpg" alt="Brown Leather Strap" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Brown Leather Strap Casual Watch</h3>
+                        <div class="para">
+                            <p class="price">₹899</p>
+                            <p>⭐ 3.9 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-watch5.jpg" alt="Modern Casual Watch" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Modern Casual Day-Date Watch</h3>
+                        <div class="para">
+                            <p class="price">₹1099</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Sunglasses for Men under ₹1000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-glass1.jpg" alt="Classic Black Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Classic Wayfarer Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹699</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-glass2.jpg" alt="Aviator Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Aviator Metal Frame Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹799</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-glass3.jpg" alt="Sports Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Sports Wrap Around Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹599</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-glass4.jpg" alt="Square Frame Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Bold Square Frame Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹749</p>
+                            <p>⭐ 3.9 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/men-glass5.jpg" alt="Round Frame Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Retro Round Gold Frame Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹849</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end #menContent -->
+
+    <!-- =========== WOMEN SECTION =========== -->
+    <div id="womenContent" class="gender-content">
+
+        <section class="hero reveal">
+            <div class="hero-left">
+                <p class="hero-label">Curated by RaushanExplains</p>
+                <h1>Women's Finds</h1>
+                <p class="hero-subtext">Chic styles, everyday essentials, and budget-smart picks made for women.</p>
+                <div class="hero-badges">
+                    <span>Trending Styles</span>
+                    <span id="budget-w">Budget Friendly</span>
+                    <span>Amazon Deals</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <p class="hero-right-text">From ethnic to western — explore fashion finds that are stylish, practical,
+                    and budget-smart.</p>
+                <div class="hero-card">
+                    <p class="hero-card-label">This Week</p>
+                    <h3>20+ women's picks</h3>
+                    <div class="hero-card-stats">
+                        <div><strong>4.0+</strong><span>Avg rating</span></div>
+                        <div><strong>₹399+</strong><span>Best deals</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-marquee">
+            <div class="trust-track">
+                <span>Women's Style</span><span>Ethnic Picks</span><span>Budget Friendly</span>
+                <span>Creator Recommended</span><span>Trending Now</span><span>Weekly Updates</span>
+                <span>Women's Style</span><span>Ethnic Picks</span><span>Budget Friendly</span>
+                <span>Creator Recommended</span><span>Trending Now</span><span>Weekly Updates</span>
             </div>
         </div>
-    </section>
 
-    <div class="trust-marquee">
-        <div class="trust-track">
-            <span>Daily Wear Picks</span>
-            <span>Fashion Finds</span>
-            <span>Budget Friendly</span>
-            <span>Trending Products</span>
-            <span>Creator Recommended</span>
-            <span>Weekly Updates</span>
-
-            <span>Daily Wear Picks</span>
-            <span>Fashion Finds</span>
-            <span>Budget Friendly</span>
-            <span>Trending Products</span>
-            <span>Creator Recommended</span>
-            <span>Weekly Updates</span>
-        </div>
-    </div>
-
-    <section class="top">
-        <div class="top1">
-            <h1>Top 5 <span>Best Sneakers under ₹2000</span></h1>
-        </div>
-
-        <div class="box">
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/sneaker1.jpg" alt="Casual White Sneakers" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Casual White Sneakers</h3>
-                    <div class="para">
-                        <p class="price">₹1499</p>
-                        <p>⭐ 4.1 rating</p>
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Jeans for Women under ₹2000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-jeans1.jpg" alt="High Waist Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>High Waist Skinny Stretch Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1299</p>
+                            <p>⭐ 4.3 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
                     </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-jeans2.jpg" alt="Wide Leg Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Wide Leg Relaxed Fit Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1499</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-jeans3.jpg" alt="Mom Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Vintage Mom Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1199</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-jeans4.jpg" alt="Flare Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Flare Bottom Bell Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹999</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-jeans5.jpg" alt="Ripped Jeans" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Ripped Distressed Slim Jeans</h3>
+                        <div class="para">
+                            <p class="price">₹1799</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/sneaker2.jpg" alt="Streetwear Sneakers" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Streetwear Sneakers</h3>
-                    <div class="para">
-                        <p class="price">₹1799</p>
-                        <p>⭐ 4.2 rating</p>
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Kurtis for Women under ₹1000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-kurti1.jpg" alt="Floral Print Kurti" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Floral Printed A-Line Kurti</h3>
+                        <div class="para">
+                            <p class="price">₹699</p>
+                            <p>⭐ 4.3 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
                     </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-kurti2.jpg" alt="Solid Color Kurti" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Solid Cotton Straight Kurti</h3>
+                        <div class="para">
+                            <p class="price">₹549</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-kurti3.jpg" alt="Block Print Kurti" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Block Print Bohemian Kurti</h3>
+                        <div class="para">
+                            <p class="price">₹799</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-kurti4.jpg" alt="Embroidered Kurti" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Embroidered Neck Anarkali Kurti</h3>
+                        <div class="para">
+                            <p class="price">₹899</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-kurti5.jpg" alt="Short Kurti" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Short Rayon Casual Kurti</h3>
+                        <div class="para">
+                            <p class="price">₹499</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/sneaker3.jpg" alt="Chunky Sneakers" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Chunky Sneakers</h3>
-                    <div class="para">
-                        <p class="price">₹1899</p>
-                        <p>⭐ 4.0 rating</p>
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Tops for Women under ₹1000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-top1.jpg" alt="Crop Top" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Ruched Crop Top</h3>
+                        <div class="para">
+                            <p class="price">₹599</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
                     </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-top2.jpg" alt="Off Shoulder Top" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Off-Shoulder Puff Sleeve Top</h3>
+                        <div class="para">
+                            <p class="price">₹749</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-top3.jpg" alt="Oversized Top" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Oversized Graphic Tee Top</h3>
+                        <div class="para">
+                            <p class="price">₹699</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-top4.jpg" alt="Tie Dye Top" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Tie-Dye Breezy Casual Top</h3>
+                        <div class="para">
+                            <p class="price">₹549</p>
+                            <p>⭐ 3.9 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-top5.jpg" alt="Shirt Style Top" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Solid Shirt-Style Collar Top</h3>
+                        <div class="para">
+                            <p class="price">₹849</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/sneaker4.jpg" alt="Running Style Sneakers" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Running Style Sneakers</h3>
-                    <div class="para">
-                        <p class="price">₹1399</p>
-                        <p>⭐ 3.9 rating</p>
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Handbags for Women under ₹2000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-bag1.jpg" alt="Tote Bag" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Canvas Tote Shoulder Bag</h3>
+                        <div class="para">
+                            <p class="price">₹999</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
                     </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-bag2.jpg" alt="Sling Bag" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Minimal Leather Sling Bag</h3>
+                        <div class="para">
+                            <p class="price">₹1299</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-bag3.jpg" alt="Clutch Bag" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Embroidered Party Clutch Bag</h3>
+                        <div class="para">
+                            <p class="price">₹799</p>
+                            <p>⭐ 4.3 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-bag4.jpg" alt="Backpack" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Casual Mini Backpack</h3>
+                        <div class="para">
+                            <p class="price">₹1499</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-bag5.jpg" alt="Potli Bag" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Ethnic Potli Drawstring Bag</h3>
+                        <div class="para">
+                            <p class="price">₹699</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/sneaker5.jpg" alt="Minimal Black Sneakers" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Minimal Black Sneakers</h3>
-                    <div class="para">
-                        <p class="price">₹1599</p>
-                        <p>⭐ 4.1 rating</p>
+        <section class="top reveal">
+            <div class="top1">
+                <h1>Top 5 <span>Best Sunglasses for Women under ₹1000</span></h1>
+            </div>
+            <div class="box">
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-glass1.jpg" alt="Cat Eye Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Cat Eye Retro Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹699</p>
+                            <p>⭐ 4.3 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
                     </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-glass2.jpg" alt="Round Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Oversized Round Frame Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹799</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-glass3.jpg" alt="Square Frame" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Thin Square Metal Frame Shades</h3>
+                        <div class="para">
+                            <p class="price">₹899</p>
+                            <p>⭐ 4.2 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-glass4.jpg" alt="Butterfly Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Butterfly Glam Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹749</p>
+                            <p>⭐ 4.0 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="img-area"><img src="images/women-glass5.jpg" alt="Rimless Sunglasses" loading="lazy"
+                            decoding="async" /></div>
+                    <div class="product-info">
+                        <h3>Rimless Tinted Lens Sunglasses</h3>
+                        <div class="para">
+                            <p class="price">₹849</p>
+                            <p>⭐ 4.1 rating</p>
+                        </div><a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on
+                            Amazon</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="top reveal">
-        <div class="top1">
-            <h1>Top 5 <span>Best Watches under ₹1500</span></h1>
-        </div>
+    </div><!-- end #womenContent -->
 
-        <div class="box">
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/watch1.jpg" alt="Classic Black Watch" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Classic Black Watch</h3>
-                    <div class="para">
-                        <p class="price">₹999</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/watch2.jpg" alt="Minimal Dial Watch" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Minimal Dial Watch</h3>
-                    <div class="para">
-                        <p class="price">₹1199</p>
-                        <p>⭐ 4.2 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/watch3.jpg" alt="Silver Chain Watch" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Silver Chain Watch</h3>
-                    <div class="para">
-                        <p class="price">₹1299</p>
-                        <p>⭐ 4.1 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/watch4.jpg" alt="Brown Strap Watch" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Brown Strap Watch</h3>
-                    <div class="para">
-                        <p class="price">₹899</p>
-                        <p>⭐ 3.9 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/watch5.jpg" alt="Modern Casual Watch" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Modern Casual Watch</h3>
-                    <div class="para">
-                        <p class="price">₹1099</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="top reveal">
-        <div class="top1">
-            <h1>Top 5 <span>Best T-Shirts under ₹1000</span></h1>
-        </div>
-
-        <div class="box">
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/tshirt1.jpg" alt="Oversized T-Shirt" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Oversized T-Shirt</h3>
-                    <div class="para">
-                        <p class="price">₹699</p>
-                        <p>⭐ 4.2 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/tshirt2.jpg" alt="Graphic Print T-Shirt" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Graphic Print T-Shirt</h3>
-                    <div class="para">
-                        <p class="price">₹799</p>
-                        <p>⭐ 4.1 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/tshirt3.jpg" alt="Solid Black T-Shirt" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Solid Black T-Shirt</h3>
-                    <div class="para">
-                        <p class="price">₹599</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/tshirt4.jpg" alt="Drop Shoulder T-Shirt" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Drop Shoulder T-Shirt</h3>
-                    <div class="para">
-                        <p class="price">₹749</p>
-                        <p>⭐ 3.9 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/tshirt5.jpg" alt="Regular Fit T-Shirt" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Regular Fit T-Shirt</h3>
-                    <div class="para">
-                        <p class="price">₹649</p>
-                        <p>⭐ 4.1 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="top reveal">
-        <div class="top1">
-            <h1>Top 5 <span>Best Bags under ₹2000</span></h1>
-        </div>
-
-        <div class="box">
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/bag1.jpg" alt="College Backpack" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>College Backpack</h3>
-                    <div class="para">
-                        <p class="price">₹1399</p>
-                        <p>⭐ 4.2 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/bag2.jpg" alt="Minimal Laptop Bag" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Minimal Laptop Bag</h3>
-                    <div class="para">
-                        <p class="price">₹1699</p>
-                        <p>⭐ 4.1 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/bag3.jpg" alt="Travel Backpack" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Travel Backpack</h3>
-                    <div class="para">
-                        <p class="price">₹1899</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/bag4.jpg" alt="Casual Sling Bag" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Casual Sling Bag</h3>
-                    <div class="para">
-                        <p class="price">₹899</p>
-                        <p>⭐ 3.9 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/bag5.jpg" alt="Urban Daypack" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Urban Daypack</h3>
-                    <div class="para">
-                        <p class="price">₹1299</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="top reveal">
-        <div class="top1">
-            <h1>Top 5 <span>Best Sunglasses under ₹1000</span></h1>
-        </div>
-
-        <div class="box">
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/glass1.jpg" alt="Classic Black Sunglasses" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Classic Black Sunglasses</h3>
-                    <div class="para">
-                        <p class="price">₹699</p>
-                        <p>⭐ 4.1 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/glass2.jpg" alt="Transparent Frame Sunglasses" loading="lazy"
-                        decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Transparent Frame Sunglasses</h3>
-                    <div class="para">
-                        <p class="price">₹799</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/glass3.jpg" alt="Round Retro Sunglasses" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Round Retro Sunglasses</h3>
-                    <div class="para">
-                        <p class="price">₹899</p>
-                        <p>⭐ 4.2 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/glass4.jpg" alt="Minimal Square Sunglasses" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Minimal Square Sunglasses</h3>
-                    <div class="para">
-                        <p class="price">₹749</p>
-                        <p>⭐ 3.9 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-
-            <div class="box1">
-                <div class="img-area">
-                    <img src="images/glass5.jpg" alt="Brown Tint Sunglasses" loading="lazy" decoding="async" />
-                </div>
-                <div class="product-info">
-                    <h3>Brown Tint Sunglasses</h3>
-                    <div class="para">
-                        <p class="price">₹849</p>
-                        <p>⭐ 4.0 rating</p>
-                    </div>
-                    <a class="check" href="#" target="_blank" rel="noopener noreferrer sponsored">Check on Amazon</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
+    <footer class="footer reveal">
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
                     <h2>RaushanExplains</h2>
-                    <p>
-                        Stylish daily picks, fashion essentials, and curated finds worth checking out.
-                    </p>
+                    <p>Stylish daily picks, fashion essentials, and curated finds worth checking out.</p>
                 </div>
-
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Tech</a>
-                    <a href="shopping.html">Shopping</a>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Tech Finds</a>
+                    <a href="shopping.html">Fashion Finds</a>
                     <a href="https://www.instagram.com/raushanexplains/" target="_blank"
                         rel="noopener noreferrer">Instagram</a>
                 </div>
-
                 <div class="footer-contact">
-                    <h4>Stay Connected</h4>
+                    <h3>Stay Connected</h3>
                     <p>DM for collaborations, shopping picks, and creator recommendations.</p>
                     <a href="https://www.instagram.com/raushanexplains/" target="_blank"
                         rel="noopener noreferrer">@raushanexplains</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>© 2026 RaushanExplains. All rights reserved.</p>
             </div>
@@ -553,7 +866,6 @@
     </footer>
 
     <button class="back-to-top" aria-label="Back to top">↑</button>
-
     <script src="script.js"></script>
 </body>
 

@@ -1,14 +1,6 @@
-/* =========================
-   RESPONSIVE
-   ========================= */
 
 @media (max-width: 1200px) {
-
-    .header-box,
-    .hero,
-    .top,
-    .trust-marquee,
-    .footer-container {
+    .header-box, .hero, .top, .trust-marquee, .footer-container {
         width: 88%;
     }
 
@@ -32,12 +24,7 @@
 }
 
 @media (max-width: 1024px) {
-
-    .header-box,
-    .hero,
-    .top,
-    .trust-marquee,
-    .footer-container {
+    .header-box, .hero, .top, .trust-marquee, .footer-container {
         width: 90%;
     }
 
@@ -107,43 +94,29 @@
 
 @media (max-width: 768px) {
     body::before {
-  display: none;
-}
-
-    .box1,
-    .hero-card,
-    .footer-container,
-    .mode-switch,
-    .hero-badges span,
-    .trust-track span {
-        box-shadow: none;
-    }
-
-    .box1,
-    .hero-card,
-    .footer-container {
-        border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .img-area::after,
-    .hero::before,
-    .hero::after,
-    .header::after {
         display: none;
     }
 
+    .box1, .hero-card, .footer-container,
+    .mode-switch, .hero-badges span, .trust-track span {
+        box-shadow: none;
+    }
+
+    .box1, .hero-card, .footer-container {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .img-area::after, .hero::before, .hero::after, .header::after {
+        display: none;
+    }
 
     .header {
         height: auto;
-        min-height: 72px;
+        min-height: auto;
         padding: 0;
     }
 
-    .header-box,
-    .hero,
-    .top,
-    .trust-marquee,
-    .footer-container {
+    .header-box, .hero, .top, .trust-marquee, .footer-container {
         width: 92%;
     }
 
@@ -167,7 +140,7 @@
         gap: 10px;
     }
 
-    /* MOBILE PE INSTAGRAM HIDE */
+    /* Hide Instagram on mobile */
     .header-actions .insta-link,
     .insta-link,
     .insta-btn {
@@ -214,10 +187,6 @@
         padding: 8px 12px;
     }
 
-    .blank {
-        height: 92px;
-    }
-
     .trust-marquee {
         margin: 0 auto 24px;
     }
@@ -232,8 +201,7 @@
         font-size: 0.84rem;
     }
 
-    .trust-marquee::before,
-    .trust-marquee::after {
+    .trust-marquee::before, .trust-marquee::after {
         width: 34px;
     }
 
@@ -247,14 +215,12 @@
         min-height: auto;
     }
 
-    .hero-left,
-    .hero-right {
+    .hero-left, .hero-right {
         width: 100%;
         max-width: 100%;
     }
 
-    .hero-label,
-    .hero-right-text {
+    .hero-label, .hero-right-text {
         display: none;
     }
 
@@ -290,10 +256,11 @@
         max-width: 100%;
         padding: 18px;
         border-radius: 22px;
+        transform: none !important;
     }
 
     .hero-card:hover {
-        transform: none;
+        transform: none !important;
     }
 
     .top {
@@ -396,9 +363,7 @@
         padding-bottom: 18px;
     }
 
-    .footer-brand,
-    .footer-links,
-    .footer-contact {
+    .footer-brand, .footer-links, .footer-contact {
         max-width: 100%;
         min-width: 100%;
     }
@@ -407,10 +372,7 @@
         font-size: 1.18rem;
     }
 
-    .footer-brand p,
-    .footer-contact p,
-    .footer-links a,
-    .footer-contact a {
+    .footer-brand p, .footer-contact p, .footer-links a, .footer-contact a {
         font-size: 0.9rem;
     }
 
@@ -424,12 +386,7 @@
 }
 
 @media (max-width: 480px) {
-
-    .header-box,
-    .hero,
-    .top,
-    .trust-marquee,
-    .footer-container {
+    .header-box, .hero, .top, .trust-marquee, .footer-container {
         width: 94%;
     }
 
@@ -525,10 +482,7 @@
         font-size: 1.12rem;
     }
 
-    .footer-brand p,
-    .footer-contact p,
-    .footer-links a,
-    .footer-contact a {
+    .footer-brand p, .footer-contact p, .footer-links a, .footer-contact a {
         font-size: 0.86rem;
         line-height: 1.7;
     }
@@ -536,20 +490,16 @@
     .footer-bottom p {
         font-size: 0.78rem;
     }
-
 }
 
 @media (max-width: 416px) {
-    #budget {
+    #budget, #budget-w {
         display: none;
     }
-
 }
 
 @media (min-width: 1280px) {
     .box1 {
         flex: 0 0 360px;
     }
-
-
 }

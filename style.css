@@ -1090,7 +1090,7 @@ body.dark-mode .blob-3 { background:radial-gradient(circle,rgba(0,210,255,0.10),
 
 /* Landing responsive */
 @media (max-width:768px) {
-    .landing-wrap { padding:115px 20px 50px; }
+    .landing-wrap { padding:145px 20px 50px; }
     .cards-row { display:none; }
     .mobile-buttons { display:flex; }
     .landing-sub { font-size:0.95rem; margin-bottom:36px; }

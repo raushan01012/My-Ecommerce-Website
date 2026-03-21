@@ -5,13 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = document.querySelector(".theme-icon");
   const header = document.querySelector(".header");
   const backToTop = document.querySelector(".back-to-top");
-  const reveals = document.querySelectorAll(".reveal");
 
   let lastScrollY = window.scrollY;
   let prevScrollY = window.scrollY;
   let ticking = false;
 
-  /* ─── THEME ─────────────────────────────────────────── */
+  /* LOADER - hide instantly, never block */
+  if (pageLoader) {
+    pageLoader.classList.add("hide");
+    pageLoader.style.display = "none";
+  }
+
+  /* THEME */
   const savedTheme = localStorage.getItem("site-theme");
   if (savedTheme === "dark") body.classList.add("dark-mode");
 
@@ -29,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ─── SCROLL UTILS ───────────────────────────────────── */
+  /* SCROLL */
   const genderNavWrap = document.querySelector(".gender-nav-wrap");
 
   const updateHeaderStyle = () => {
@@ -42,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTop.classList.toggle("show", lastScrollY > 220);
   };
 
-  // Smart hide: hide gender nav when scrolling down, show when scrolling up
   const updateGenderNav = () => {
     if (!genderNavWrap) return;
     const diff = lastScrollY - prevScrollY;
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ─── REVEAL ON SCROLL ───────────────────────────────── */
+  /* REVEAL */
   const triggerReveals = () => {
     if ("IntersectionObserver" in window) {
       const revealObserver = new IntersectionObserver(
@@ -98,18 +102,15 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".reveal").forEach((item) => item.classList.add("active"));
     }
   };
-
   triggerReveals();
 
-  /* ─── GENDER TAB SWITCHER (shopping page only) ───────── */
+  /* GENDER TAB SWITCHER */
   const genderTabs = document.querySelectorAll(".gender-tab");
   const genderSlider = document.getElementById("genderSlider");
   const menContent = document.getElementById("menContent");
   const womenContent = document.getElementById("womenContent");
 
   if (genderTabs.length && genderSlider) {
-
-    // Position slider under given tab element
     const moveSlider = (tabEl) => {
       const nav = tabEl.closest(".gender-nav");
       const navRect = nav.getBoundingClientRect();
@@ -118,63 +119,40 @@ document.addEventListener("DOMContentLoaded", () => {
       genderSlider.style.width = tabRect.width + "px";
     };
 
-    // Init slider on active tab
     const activeTab = document.querySelector(".gender-tab.active");
-    if (activeTab) {
-      // Use rAF so layout is settled
-      requestAnimationFrame(() => moveSlider(activeTab));
-    }
+    if (activeTab) requestAnimationFrame(() => moveSlider(activeTab));
 
     const showContent = (gender) => {
       const isMan = gender === "men";
       const showEl = isMan ? menContent : womenContent;
       const hideEl = isMan ? womenContent : menContent;
-
       if (!showEl || !hideEl) return;
-
-      // Hide old
       hideEl.classList.remove("active-content", "fade-in");
       hideEl.style.display = "none";
-
-      // Show new
       showEl.style.display = "block";
-      // Re-trigger animation
       showEl.classList.remove("fade-in");
-      void showEl.offsetWidth; // reflow
+      void showEl.offsetWidth;
       showEl.classList.add("active-content", "fade-in");
-
-      // Re-init reveal observers for newly visible content
       triggerReveals();
-
-      // Scroll top smoothly
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     genderTabs.forEach((tab) => {
       tab.addEventListener("click", () => {
         if (tab.classList.contains("active")) return;
-
         genderTabs.forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
-
-        // Save preference
         const gender = tab.dataset.gender;
         localStorage.setItem("site-gender", gender);
-
-        // Animate slider
         moveSlider(tab);
-
-        // Switch content
         showContent(gender);
       });
     });
 
-    // Restore gender preference
     const savedGender = localStorage.getItem("site-gender");
     if (savedGender && savedGender !== "men") {
       const targetTab = document.querySelector(`.gender-tab[data-gender="${savedGender}"]`);
       if (targetTab) {
-        // Simulate click without scroll
         genderTabs.forEach((t) => t.classList.remove("active"));
         targetTab.classList.add("active");
         requestAnimationFrame(() => moveSlider(targetTab));
@@ -182,33 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Recalculate slider on resize
     window.addEventListener("resize", () => {
       const active = document.querySelector(".gender-tab.active");
       if (active) moveSlider(active);
     }, { passive: true });
   }
-
-  /* ─── PAGE LOADER ────────────────────────────────────── */
-  body.style.overflow = "hidden";
-  body.style.touchAction = "none";
-
-  let loaderHidden = false;
-
-  const hideLoader = () => {
-    if (loaderHidden) return;
-    loaderHidden = true;
-    if (pageLoader) pageLoader.classList.add("hide");
-    body.style.overflow = "";
-    body.style.touchAction = "";
-  };
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      hideLoader();
-    });
-  });
-
-  window.addEventListener("load", hideLoader, { once: true });
-  setTimeout(hideLoader, 1500);
 });
